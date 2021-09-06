@@ -19,15 +19,38 @@ function generateSign() {
             break;
     }
     cpuImg.src = "images/" + sign + ".png";
-    cpuImg.hidden = false;
     return sign;
 }
 
+function reset() {
+    let myScore = document.getElementById("my-score");
+    let cpuScore = document.getElementById("cpu-score");
+
+    myScore.innerHTML = 0;
+    cpuScore.innerHTML = 0;
+
+    document.getElementById("reset").hidden = true;
+    document.getElementById("cpu-img").hidden = false;
+    document.getElementById("cpu-img").src = "images/cpu.png";
+    document.getElementById("result").innerHTML = "Choose your weapon!";
+    document.getElementById("result").style = "color: black";
+}
+
 function game(sign) {
-    const VICTORY_MSG = "Congo rats, you've won!";
-    const LOSS_MSG = "Too bad, you've lost...";
-    const DRAW_MSG = "It's a tie";
+    let myScore = document.getElementById("my-score");
+    let cpuScore = document.getElementById("cpu-score");
     let resultBox = document.getElementById("result");
+    let cpuImg = document.getElementById("cpu-img");
+
+    let myScoreInt = parseInt(myScore.innerHTML);
+    let cpuScoreInt = parseInt(cpuScore.innerHTML);
+
+    if (cpuScoreInt > 4 || myScoreInt > 4) return;
+
+    const VICTORY_MSG = "You win";
+    const LOSS_MSG = "You lose";
+    const DRAW_MSG = "It's a tie";
+
     let result;
     let cpuSign = generateSign();
     switch (sign) {
@@ -52,8 +75,31 @@ function game(sign) {
         default:
             break;
     }
-    if (result === -1) { resultBox.innerHTML = LOSS_MSG; resultBox.style = "color: red"; }
-    else if (result === 0) { resultBox.innerHTML = DRAW_MSG; resultBox.style = "color: black"; }
-    else if (result === 1) { resultBox.innerHTML = VICTORY_MSG; resultBox.style = "color: green"; }
+    if (result === -1) {
+        cpuScore.innerHTML = cpuScoreInt + 1;
+        resultBox.style = "color: red";
+        if (cpuScoreInt + 1 > 4) {
+            resultBox.innerHTML = "CPU WINS THE GAME!";
+            cpuImg.hidden = true;
+            document.getElementById("reset").hidden = false;
+            return
+        }
+        resultBox.innerHTML = LOSS_MSG;
+    }
+    else if (result === 0) {
+        resultBox.innerHTML = DRAW_MSG;
+        resultBox.style = "color: black";
+    }
+    else if (result === 1) {
+        myScore.innerHTML = myScoreInt + 1
+        resultBox.style = "color: green";
+        if (myScoreInt + 1 > 4) {
+            resultBox.innerHTML = "YOU WIN THE GAME!";
+            cpuImg.hidden = true;
+            document.getElementById("reset").hidden = false;
+            return
+        }
+        resultBox.innerHTML = VICTORY_MSG;
+    }
 }
 

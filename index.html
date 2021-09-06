@@ -12,18 +12,20 @@
 <body>
     <main class="main">
         <div id="title">
-            <h1>Rock Paper Scissors Game</h1>
-        </div>
-        <div id="computer-move">
-            <img id="cpu-img" src="" alt="computer-sign" hidden>
-        </div>
-        <div id="result-screen">
-            <h3 id="result">Choose a sign to play</h3>
+            <span id="scoreboard">Scoreboard</span><br/>
+            You <span id="my-score">0</span> - <span id="cpu-score">0</span> CPU
         </div>
         <div id="signs">
             <img src="images/rock.png" alt="Rock" onclick="game('rock')">
             <img src="images/paper.png" alt="Paper" onclick="game('paper')">
             <img src="images/scissors.png" alt="Scissors" onclick="game('scissors')">
+        </div>
+        <div id="result-screen">
+            <h3 id="result">Choose your weapon!</h3>
+        </div>
+        <div id="computer-move">
+            <img id="cpu-img" src="images/cpu.png" alt="computer-sign">
+            <span id="reset" onclick="reset()" hidden>Play Again?</span>
         </div>
     </main>
 </body>
