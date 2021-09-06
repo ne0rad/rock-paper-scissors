@@ -4,7 +4,7 @@ function rng(max) {
 
 function generateSign() {
     let sign = rng(3);
-    let text = document.getElementsByTagName("h2")[0];
+    let text = document.getElementById("computer-message");
     switch (sign) {
         case 0:
             sign = "rock";
@@ -18,14 +18,14 @@ function generateSign() {
         default:
             break;
         }
-    text.innerHTML = "Computer plays: " + sign;
+    text.innerHTML = "CPU plays " + sign;
     return sign;
 }
 
 function game(sign) {
     const VICTORY_MSG = "Congo rats, you've won!";
     const LOSS_MSG = "Too bad, you've lost...";
-    const DRAW_MSG = "It's a Draw";
+    const DRAW_MSG = "It's a tie";
     let resultBox = document.getElementById("result");
     let result;
     let cpuSign = generateSign();

@@ -6,16 +6,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/style.css">
-    <title>JS test enviroment</title>
+    <title>Rock Paper Scissors Game</title>
 </head>
 
 <body>
-    <h1>Rock Paper Scissors Game</h1>
-    <h2>Computer is ready</h2>
-    <h3 id="result"></h3>
-    <button onclick="game('rock')">Rock</button>
-    <button onclick="game('paper')">Paper</button>
-    <button onclick="game('scissors')">Scissors</button>
+    <main class="main">
+        <div id="title">
+            <h1>Rock Paper Scissors Game</h1>
+        </div>
+        <div id="computer-move">
+            <h2 id="computer-message">Computer is ready</h2>
+        </div>
+        <div id="result-screen">
+            <h3 id="result">...</h3>
+        </div>
+        <div id="signs">
+            <img src="images/rock.png" alt="Rock" onclick="game('rock')">
+            <img src="images/paper.png" alt="Paper" onclick="game('paper')">
+            <img src="images/scissors.png" alt="Scissors" onclick="game('scissors')">
+        </div>
+    </main>
 </body>
 
 <script src="js/script.js"></script>

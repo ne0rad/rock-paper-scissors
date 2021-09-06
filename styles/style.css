@@ -13,3 +13,34 @@ button:hover {
 button:active {
     box-shadow: 0 0 1px 1px gray;
 }
+
+.main {
+    margin: auto;
+    text-align: center;
+    width: 400px;
+    box-shadow: 0 0 2px 1px black;
+    padding: 0;
+    border-radius: 10px;
+    background-color: antiquewhite;
+}
+
+#title {
+    background-color: aliceblue;
+    border-radius: 10px 10px 0 0;
+}
+
+#signs img {
+    width: auto;
+    height: 60px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+}
+#signs img:hover {
+    box-shadow: 0 0 3px 1px black;
+    background-color: white;
+}
+#signs img:active {
+    box-shadow: 0 0 3px 1px black;
+    background-color: silver;
+}
