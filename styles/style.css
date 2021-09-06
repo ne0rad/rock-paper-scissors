@@ -9,10 +9,11 @@
     background-color: antiquewhite;
 }
 
-#title {
-    background-color: silver;
+#score {
+    background-color: grey;
     border-radius: 10px 10px 0 0;
     padding: 5px;
+    color: white;
 }
 
 #signs img {
@@ -57,10 +58,10 @@
     padding: 10px;
     text-shadow: 0 0 1px black;
     box-shadow: 0 0 1px 1px black;
-    background-color: rgb(155, 155, 155);
+    background-color: grey;
     border-radius: 10px;
 }
 #reset:hover {
-    background-color: grey;
+    background-color: rgb(95, 95, 95);
     cursor: pointer;
 }
