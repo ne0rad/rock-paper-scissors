@@ -3,23 +3,11 @@ function rng(max) {
 }
 
 function generateSign() {
-    let sign = rng(3);
     let cpuImg = document.getElementById("cpu-img");
-    switch (sign) {
-        case 0:
-            sign = "rock";
-            break;
-        case 1:
-            sign = "paper";
-            break
-        case 2:
-            sign = "scissors";
-            break;
-        default:
-            break;
-    }
-    cpuImg.src = "images/" + sign + ".png";
-    return sign;
+    let sign = ['rock','paper','scissors'];
+    let result = sign[rng(3)];
+    cpuImg.src = "images/" + result + ".png";
+    return result;
 }
 
 function reset() {
@@ -94,7 +82,7 @@ function game(sign) {
         myScore.innerHTML = myScoreInt + 1
         resultBox.style = "color: green";
         if (myScoreInt + 1 > 4) {
-            resultBox.innerHTML = "YOU WIN THE GAME!";
+            resultBox.innerHTML = "YOU'VE WON THE GAME!";
             cpuImg.hidden = true;
             document.getElementById("reset").hidden = false;
             return
