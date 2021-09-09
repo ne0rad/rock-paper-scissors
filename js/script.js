@@ -67,7 +67,7 @@ function game(sign) {
         cpuScore.innerHTML = cpuScoreInt + 1;
         resultBox.style = "color: red";
         if (cpuScoreInt + 1 > 4) {
-            resultBox.innerHTML = "CPU WINS THE GAME!";
+            resultBox.innerHTML = "CPU HAS WON THE GAME!";
             cpuImg.hidden = true;
             document.getElementById("reset").hidden = false;
             return
